@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Better Contact Form | by fourtonfish.com</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/script.js"></script>
+</head>
+<body>
+<div>
+	<a id="contactmelink" onclick="javascript:sendEmail();" href="mailto:your@email.com">Send me an email</a>
+</div>
+	<div id="contact-me-form">
+		<h2 id="contactmemessage">Contact me</h2>
+		<p></p>
+		<form action="php/mail.php" method="POST">		
+			<div>
+			  <input type="text" name="name" placeholder="What is your name?">
+			</div>
+			<div>
+			  <input type="text" name="email" placeholder="Where can I reach you? (email, Twitter handle, website)?">
+			</div>
+			<div>
+			  <textarea name="message" placeholder="What would you like to tell me?"></textarea>
+			</div>
+			<p></p>
+			<div>
+				<input type="submit" onclick="alert('Thanks, I will look into it!');" value="Send">
+				<input type="reset" value="Clear">
+				<input type="button" onclick="document.getElementById('contact-me-form').style.display='none';" value="Close">
+			</div>
+			  <input id="fullname" type="text" name="fullname" placeholder="What is your full name?">
+		</form>
+		<p>
+			<a id="altmail" href="mailto:your@email.com" target="_blank" onclick="document.getElementById('contact-me-form').style.display='none';">I don't like contact forms, let me use my email client</a>
+		</p>
+
+	</div>
+</body>
+</html>

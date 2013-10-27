@@ -1,0 +1,18 @@
+#contact-me-form{
+	display:none;
+	position: fixed;
+	padding: 5px 10px 20px;
+	width: 100%;
+	top: 10px;
+	background-color:white;
+	z-index:90000;	
+}
+
+#altmail{
+	padding: 1.2em 0 !important;
+}
+
+#fullname{
+	visibility: hidden;
+	height: 1px;
+}
