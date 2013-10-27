@@ -22,7 +22,7 @@ Also, in _index.html_:
 	<a id="contactmelink" onclick="javascript:sendEmail();" href="mailto:your@email.com">Send me an email</a>
 
 
-I am including **two versions** of the form, a simple one (which has one small issue<sup>2</sup>) and a fancier one that uses Twitter Bootstrap.
+I am including **two versions** of the form, a simple one (which has one small issue<sup>2</sup>) and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
 
 ***
