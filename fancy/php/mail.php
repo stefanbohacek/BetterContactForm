@@ -1,15 +1,17 @@
 <?php
 	$name = $_POST['name'];
 	$email = $_POST['email'];
+	$remove = array("\r", "\n", "%0A", "%0D", "%0a", "%0d");
+	$email = str_replace($remove, "", $email);	
 	$message = $_POST['message'];
 	$trap = $_POST['fullname'];
 	$trap == '' or die();
 	$formcontent="A message from $name ($email)\n$message";
 	$recipient = "your@email.com";
-	$subject = "A message from $name ($email)";
+	$subject = "fourtonfish.com: A message from $name ($email)";
 	$mailheader = "From: $email \r\n";
 /*
-	Either set the header below to yoursite.com or delete this comment to redirect to the mail.php
+	You can use the code below to redirect to yoursite.com
 	header("Location: //yoursite.com");	
 */
 	$mailsent = mail($recipient, $subject, $formcontent, $mailheader);
@@ -23,4 +25,3 @@
 	}		
 	echo "Your message was sent.<br/><a href=\"http://YOURSITE.COM\">Return to the main page</a>.";
 ?>
-

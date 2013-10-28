@@ -25,7 +25,10 @@ Also, in _index.html_:
 I am including **two versions** of the form, a simple one (which has one small issue<sup>2</sup>) and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
 ***
-<sup>1</sup> These contact forms **don't validate the email**, which is pretty much the whole point. If your visitor wants to use a fake email, it is not hard to make one up. If you go as far as to try to see if the email really exists, it is still trivial to bypass your form by creating yet another free email account.
+<sup>1</sup> The mail script will try to prevent email injection by removing certain characters that allow adding CC and BCC email addresses.
+
+	$remove = array("\r", "\n", "%0A", "%0D", "%0a", "%0d");
+
 
 Furthermore, I am using **a very simple implementation of the honeypot technique** to prevent spam. You can read more about this method here: http://nedbatchelder.com/text/stopbots.html (or just google it). In a nutshell: you are creating a **hidden input field**, here called _fullname_. The _email.php_ script will check if the field was filled out (bots don't process CSS, so to them it will be visible).
 
