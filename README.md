@@ -24,7 +24,6 @@ Also, in _index.html_:
 
 I am including **two versions** of the form, a simple one (which has one small issue<sup>2</sup>) and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
-
 ***
 <sup>1</sup> These contact forms **don't validate the email**, which is pretty much the whole point. If your visitor wants to use a fake email, it is not hard to make one up. If you go as far as to try to see if the email really exists, it is still trivial to bypass your form by creating yet another free email account.
 
@@ -45,3 +44,26 @@ To this:
 On Linux, I have the problem even when using Firefox (In Windows it's limited only to Chrome, Firefox works fine).
 
 The "fancy" version doesn't have this problem at all.
+***
+  
+Assorted Feedback and Suggestions
+=================================
+  
+>Your multi-source contact info field cannot possibly reliably detect whether the user is entering a twitter, email, website, or other contact information. Not even with matching against strings/regex. You're gonna run into people putting unverifiable junk in that box, and people who don't specify what source the contact is from. The traditional way is to send an email to the address to see if it works. 
+
+The use cases of this form don't require this. This form suits best personal websites where the visitor trying to get in touch with you is very likely to want to include proper contact information.
+
+> You should look into APIs like http://www.fullcontact.com/developer that can find all of a user's social accounts just given his email.
+
+> If you wanna see some "advanced" forms, check out http://wufoo.com 
+
+The contact forms I made are just examples/blueprints, so I am intentionally keeping them simple. The real point is to show the UX ideas: the "multi-source contact info field", an option to use user's email client instead of forcing him or her to use the form and sending a confirmation email, if possible.
+
+You can actually use wufoo.com and follow while following these principles.
+
+The actual forms only serve as a "clickable" example, which I think would be better than a mockup screenshot.
+
+A Few Good Tips I Didn't Implement
+==================================
+  
+- The _Name_ field is not really necessary, as it will likely be included in the email or the person's Twitter page. The visitor can also easily include his or her name in the message.

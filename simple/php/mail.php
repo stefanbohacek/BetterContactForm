@@ -6,7 +6,7 @@
 	$trap == '' or die();
 	$formcontent="A message from $name ($email)\n$message";
 	$recipient = "your@email.com";
-	$subject = "fourtonfish.com: A message from $name ($email)";
+	$subject = "A message from $name ($email)";
 	$mailheader = "From: $email \r\n";
 /*
 	Either set the header below to yoursite.com or delete this comment to redirect to the mail.php

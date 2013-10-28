@@ -32,7 +32,7 @@
 			</div>
 			<p></p>
 			<div class="btn-group btn-group-sm">
-				<input type="submit" onclick="alert('Thanks, I will look into it!');" value="Send" class="btn btn-primary">
+				<input type="submit" onclick="alert('Thanks, I will look into it!');" value="Send" class="btn btn-default">
 				<input type="button" onclick="$('#contact-me-form').fadeOut('fast'); return false;" value="Close" class="btn btn-default">
 			</div>
 			  <input title="Ignore this field, thank you!" id="fullname" type="text" name="fullname" placeholder="Ignore this field, thank you!">
