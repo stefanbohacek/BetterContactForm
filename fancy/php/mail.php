@@ -1,23 +1,50 @@
 <?php
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$remove = array("\r", "\n", "%0A", "%0D", "%0a", "%0d");
-	$email = str_replace($remove, "", $email);	
-	$message = $_POST['message'];
+	function str_sanitize($str, $allow_nl){
+/*
+	Function for preventing email header injection. Feel free to modify this code if you know what you are doing.
+*/
+		$remove = array("%0A", "%0D", "%0a", "%0d");
+
+		if (!$allow_nl){
+		//	New line characters are allowed in message body, otherwise stripped
+			array_push($remove, "\r", "\n");
+		}
+		$str = str_replace($remove, "", $str);
+		//	HTML tags are stripped
+		$str = strip_tags($str);
+	    return $str;
+	}
+
+	if (isset($_POST['name']))
+		$name = str_sanitize($_POST['name'], false);
+	else
+		$name = "Name not provided";
+
+	if (isset($_POST['email'])) 
+		$email = str_sanitize($_POST['email'], false);
+	else
+		$email = "Contact not provided";
+
+	if (isset($_POST['message']))
+		$message = str_sanitize($_POST['message'], true);
+	else
+		$message = "No message";
+
 	$trap = $_POST['fullname'];
-	$trap == '' or die();
+	$trap == '' or die("");
 	$formcontent="A message from $name ($email)\n$message";
+	//	Change $recipient to your email
 	$recipient = "your@email.com";
-	$subject = "fourtonfish.com: A message from $name ($email)";
+	$subject = "A message from $name ($email)";
 	$mailheader = "From: $email \r\n";
 /*
-	You can use the code below to redirect to yoursite.com
+	Either set the header below to yoursite.com or delete this comment to redirect to the mail.php
 	header("Location: //yoursite.com");	
 */
 	$mailsent = mail($recipient, $subject, $formcontent, $mailheader);
 	if ($mailsent){
 		if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-			$confirmation = "Your email to YOUR@EMAIL.COM has been sent. Here is a copy of your message:\n" . $message;
+			$confirmation = "Your email to " . $recipient . " has been sent. Here is a copy of your message:\n" . $message;
 			mail($email, "Your message to " . $recipient . " was delivered", $confirmation, $mailheader);
 		}	
 	}else{
