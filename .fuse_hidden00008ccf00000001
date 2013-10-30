@@ -11,8 +11,6 @@ This is more of an **idea for UX improvement** rather than a complete solution<s
 
 3. if your visitor uses an email in the form, **send him or her a confirmation email**
 
-4. omit the form reset button (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
-
 To try the form, download the code from this repository and change the _mail.php_, specifically these two parts: 
 
 	$recipient = "your@email.com";
@@ -27,7 +25,7 @@ Also, in _index.html_:
 I am including **two versions** of the form, a simple one (which has one small issue<sup>2</sup>) and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
 ***
-<sup>1</sup> The mail script will try to prevent email injection by removing certain characters that allow adding CC and BCC email addresses. Also, HTML tags will be stripped. For more details see
+<sup>1</sup> The mail script will try to prevent email injection by removing certain characters that allow adding CC and BCC email addresses and stripping HTML tags. For more details see
 
 	function str_sanitize($str, $allow_nl)
 
@@ -66,10 +64,9 @@ The use cases of this form don't require this. This form suits best personal web
 
 The contact forms I made are just examples/blueprints, so I am intentionally keeping them simple. The real point is to show the UX ideas: the "multi-source contact info field", an option to use user's email client instead of forcing him or her to use the form and sending a confirmation email, if possible.
 
-You can actually use wufoo.com while following these principles.
+You can actually use wufoo.com and follow while following these principles.
 
 The actual forms only serve as a "clickable" example, which I think would be better than a mockup screenshot.
-
 
 A Few Good Tips I Didn't Implement
 ==================================
