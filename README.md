@@ -1,4 +1,4 @@
-bBetter Contact Form
+Better Contact Form
 =================
 ![A better contact form experience](/screenshot.png)
 
