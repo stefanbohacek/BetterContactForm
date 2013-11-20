@@ -13,6 +13,8 @@ This is more of an **idea for UX improvement** rather than a complete solution<s
 
 4. omit the **form reset button** (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
 
+A big thanks to [Ayelet](https://github.com/ayeletdn) who helped me fix an annoying bug!
+
 To try the form, download the code from this repository and update the following files to use your email address and website:
 
 **In _mail.php_:**
