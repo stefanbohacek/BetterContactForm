@@ -1,30 +1,36 @@
-Better Contact Form
+bBetter Contact Form
 =================
 ![A better contact form experience](/screenshot.png)
 
 
 This is more of an **idea for UX improvement** rather than a complete solution<sup>1</sup>. My proposal is to: 
 
-1. allow your visitors to include **any form of contact** on your contact form (eg: phone number or Twitter handle instead of an email)
+1. allow your visitors to include **any form of contact** (eg: phone number or Twitter handle instead of an email)
 
-2. include **an option to use user's email client** if he or she really doesn't like contact forms
+2. include **an option to use user's email client**
 
 3. if your visitor uses an email in the form, **send him or her a confirmation email**
 
-4. omit the form reset button (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
+4. omit the **form reset button** (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
 
-To try the form, download the code from this repository and change the _mail.php_, specifically these two parts: 
+To try the form, download the code from this repository and update the following files to use your email address and website:
+
+**In _mail.php_:**
 
 	$recipient = "your@email.com";
-	...
+    ...
 	<a href=\"http://YOURSITE.COM\">
 
-Also, in _index.html_:
+**In _index.html_:**
 
 	<a id="contactmelink" onclick="javascript:sendEmail();" href="mailto:your@email.com">Send me an email</a>
 
 
-I am including **two versions** of the form, a simple one (which has one small issue<sup>2</sup>) and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE).
+I am including **two versions** of the form, a simple one and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE). You can preview them here (forms are not configured, so they will not send any emails):
+
+* [simple](http://fourtonfish.com/bettercontactform/simple)
+* [fancy](http://fourtonfish.com/bettercontactform/fancy)
+
 
 ***
 <sup>1</sup> The mail script will try to prevent email injection by removing certain characters that allow adding CC and BCC email addresses. Also, HTML tags will be stripped. For more details see
@@ -40,17 +46,8 @@ One drawback of this technique is that the hidden field is visible to people usi
 
 Again, this is **not a complete solution**, so please feel free to implement your own security method(s) here.
 
-<sup>2</sup> I seem to have a problem in Chrome when using Gmail as my default email client. Attempting to show the form automatically opens a new email in Gmail. The only solution I came up with is to remove the no-javascript fallback, that is in index.html I would change this:
+Also, you might want to check for empty fields (the form allows to send an empty message).
 
-	<a id="contactmelink" onclick="javascript:sendEmail();" href="mailto:your@email.com">Send me an email</a>
-
-To this:
-
-	<a id="contactmelink" onclick="javascript:sendEmail(); return false;" href="#">Send me an email</a>
-
-On Linux, I have the problem even when using Firefox (In Windows it's limited only to Chrome, Firefox works fine).
-
-The "fancy" version doesn't have this problem at all.
 ***
   
 Assorted Feedback and Suggestions
