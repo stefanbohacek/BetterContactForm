@@ -37,6 +37,7 @@
 	$recipient = "your@email.com";
 	$subject = "A message from $name ($email)";
 	$mailheader = "From: $email \r\n";
+	$mailheaderconf = "From: $recipient \r\n";
 /*
 	Either set the header below to yoursite.com or delete this comment to redirect to the mail.php
 	header("Location: //yoursite.com");	
@@ -45,7 +46,7 @@
 	if ($mailsent){
 		if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 			$confirmation = "Your email to " . $recipient . " has been sent. Here is a copy of your message:\n" . $message;
-			mail($email, "Your message to " . $recipient . " was delivered", $confirmation, $mailheader);
+			mail($email, "Your message to " . $recipient . " was delivered", $confirmation, $mailheaderconf);
 		}	
 	}else{
 		die("Your message could not be sent. Sorry.<br/><a hef='http://YOURSITE.COM' title='Return'>Return to the main page</a>");
