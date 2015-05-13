@@ -6,12 +6,10 @@ Better Contact Form
 This is more of an **idea for UX improvement** rather than a complete solution<sup>1</sup>. My proposal is to: 
 
 1. allow your visitors to include **any form of contact** (eg: phone number or Twitter handle instead of an email)
-
 2. include **an option to use user's email client**
-
-3. if your visitor uses an email in the form, **send him or her a confirmation email**
-
-4. omit the **form reset button** (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
+3. allow the user easily copy the email address and use it any way they please<sup>2</sup>
+4. if your visitor uses an email in the form, **send him or her a confirmation email**
+5. omit the **form reset button** (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
 
 A big thanks to [Ayelet](https://github.com/ayeletdn) who helped me fix an annoying bug!
 
@@ -19,14 +17,15 @@ To try the form, download the code from this repository and update the following
 
 **In _mail.php_:**
 
-	$recipient = "your@email.com";
-    ...
-	<a href=\"http://YOURSITE.COM\">
-
+```
+$recipient = "your@email.com";
+  ...
+<a href=\"http://YOURSITE.COM\">
+```
 **In _index.html_:**
-
-	<a id="contactmelink" onclick="javascript:sendEmail();" href="mailto:your@email.com">Send me an email</a>
-
+```
+  <a id="contactmelink" onclick="javascript:sendEmail();" href="mailto:your@email.com">Send me an email</a>
+```
 
 I am including **two versions** of the form, a simple one and a fancier one that uses Twitter Bootstrap (Apache License: https://github.com/twbs/bootstrap/blob/master/LICENSE). You can preview them here (forms are not configured, so they will not send any emails):
 
@@ -37,7 +36,7 @@ I am including **two versions** of the form, a simple one and a fancier one that
 ***
 <sup>1</sup> The mail script will try to prevent email injection by removing certain characters that allow adding CC and BCC email addresses. Also, HTML tags will be stripped. For more details see
 
-	function str_sanitize($str, $allow_nl)
+  function str_sanitize($str, $allow_nl)
 
 in _mail.php_.
 
@@ -49,6 +48,8 @@ One drawback of this technique is that the hidden field is visible to people usi
 Again, this is **not a complete solution**, so please feel free to implement your own security method(s) here.
 
 Also, you might want to check for empty fields (the form allows to send an empty message).
+
+<sup>2</sup> This is useful for people who can't/don't change their default email clients. Think of someone clicking an email link, having to wait a few seconds while Outlook loads, then they go back to your site, right-click the link and copy the email.
 
 ***
   
