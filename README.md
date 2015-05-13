@@ -7,7 +7,7 @@ This is more of an **idea for UX improvement** rather than a complete solution<s
 
 1. allow your visitors to include **any form of contact** (eg: phone number or Twitter handle instead of an email)
 2. include **an option to use user's email client**
-3. allow the user easily copy the email address and use it any way they please<sup>2</sup>
+3. allow the user easily **copy the email address** and use it any way they please<sup>2</sup>
 4. if your visitor uses an email in the form, **send him or her a confirmation email**
 5. omit the **form reset button** (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
 
