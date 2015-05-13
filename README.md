@@ -8,7 +8,7 @@ This is more of an **idea for UX improvement** rather than a complete solution<s
 1. allow your visitors to include **any form of contact** (eg: phone number or Twitter handle instead of an email)
 2. include **an option to use user's email client**
 3. allow the user to easily **copy the email address** and use it any way they please<sup>2</sup>
-4. if your visitor uses an email in the form, **send him or her a confirmation email**
+4. if your visitor uses an email in the form, **send them a confirmation email**
 5. omit the **form reset button** (https://www.w3.org/Bugs/Public/show_bug.cgi?id=9406)
 
 A big thanks to [Ayelet](https://github.com/ayeletdn) who helped me fix an annoying bug!
@@ -64,7 +64,7 @@ The use cases of this form don't require this. This form suits best personal web
 
 > If you wanna see some "advanced" forms, check out http://wufoo.com 
 
-The contact forms I made are just examples/blueprints, so I am intentionally keeping them simple. The real point is to show the UX ideas: the "multi-source contact info field", an option to use user's email client instead of forcing him or her to use the form and sending a confirmation email, if possible.
+The contact forms I made are just examples/blueprints, so I am intentionally keeping them simple. The real point is to show the UX ideas: the "multi-source contact info field", an option to use user's email client instead of forcing them to use the form and sending a confirmation email, if possible.
 
 You can actually use wufoo.com while following these principles.
 
