@@ -36,7 +36,9 @@ I am including **two versions** of the form, a simple one and a fancier one that
 ***
 <sup>1</sup> The mail script will try to prevent email injection by removing certain characters that allow adding CC and BCC email addresses. Also, HTML tags will be stripped. For more details see
 
-  function str_sanitize($str, $allow_nl)
+```
+function str_sanitize($str, $allow_nl)
+```
 
 in _mail.php_.
 
