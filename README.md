@@ -76,4 +76,4 @@ The actual forms only serve as a "clickable" example, which I think would be bet
 A Few Good Tips I Didn't Implement
 ==================================
   
-- The _Name_ field is not really necessary, as it will likely be included in the email or the person's Twitter page. The visitor can also easily include his or her name in the message.
+- The _Name_ field is not really necessary, as it will likely be included in the email or the person's Twitter page. The visitor can also easily include their name in the message.
